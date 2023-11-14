@@ -79,6 +79,12 @@ For an in-depth understanding of our project, methodologies, and results, please
 
 Explore our data, models, and results interactively through our [web interface](https://oil-price-prediction.onrender.com/). Ideal for non-tech users to quickly visualize data correlations, model metrics, and predictions.
 
+## Excel Overview
+
+Here is quick look at how each model performed on each dataset
+[Model_Metrics.xlsx](https://github.com/Hutto04/The-Oval-Table/files/13348973/Model_Metrics.xlsx)
+
+
 ## Authors
 
 - Maria Mills
