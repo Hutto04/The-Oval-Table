@@ -1,121 +1,153 @@
-# The Oval Table - Oil Price Prediction Models (v2)
 
-Welcome to the Oval Table's repository for our oil price prediction project. Our team has embarked on an ambitious journey into machine learning to develop models aimed at predicting future oil prices. This repository is a comprehensive suite of our models, findings, and insights.
+# Oil Price Prediction: Data Exploration & Prediction Web Interface
 
-## Key Features
-
-1. __Data Exploration__: Dive into our datasets, we used histograms and plots to understand and visualization.
-
-2. __Model Training__: We've trained three primary models in __Cycle 1__:
-- __XGBoost__: A gradient boosting framework that uses decision trees.
-- __Random Forest__: An ensemble learning method that operates by constructing multiple decision trees.
-- __Polynomial Regression__: A regression algorithm that models the relationship between the input and output as an nth degree polynomial.
-
-For __Cycle 2__ we've added 3 additional models, that was __time series__ models for future oil price forecasting:
--  __ARIMA__
-- __Prophet__
-- __XGBoost (Time Series)__
-
-3. __Model Evaluation__: For each model, we've plotted:
-- __Actual vs. Predicted__: See how our model's predictions compared against the actual values.
-- __Learning Curve__: Understand the model's performance as more data is used for training.
-- __Feature Importance__: (For models that support it) Understand which features are most influential in making predictions.
-
-4. __Baseline Model__: We've also included a _naive forecast_ as a baseline to compare our models against.
+This web interface is a crucial component of the larger __Oil Price Prediction Project__. Initially designed for data exploration, the site offers users a comprehensive platform for visualizing, filtering, and understanding historical trends in oil prices. In future releases, predictive analytics capabilities will be integrated into the platform, providing users with actionable insights into future oil price fluctuations.
 
 
-## Getting Started
+## Project Documentation
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+⚠️ This README focuses primarily on the web interface portion of our Oil Price Prediction ML project. __It doesn't go into great detail about the technical aspects of the primary project, like data cleansing, model training, our development approach, and other technical details.__
 
-### Installing
-To get the project running, follow these steps:
+If you're interested in a deeper understanding of our project—including challenges faced, solutions implemented, and technical details—we encourage you to visit the comprehensive documentation linked below.
 
-1. Clone the repo:
-```bash
-git clone https://github.com/Hutto04/The-Oval-Table.git
-```
-2. Navigate to the project directory:
-```bash
-cd The-Oval-Table
+[Project Documentation](https://mariamills.github.io/Oil-Price-Prediction-Documentation/)
+
+
+## Features
+
+- __Data Visualization__: Utilize interactive charts to explore historical oil price data, gaining a clearer picture of market trends over time.
+
+- __Data Filtering__: Customize your data views with dynamic filtering options, _currently_ limited to only feature selection.
+
+- __Graph Type Selection__: Choose between Scatter Plot and Line Plot visualizations to better suit your analysis needs.
+
+- __Upcoming Predictions__: In future releases, users will have the ability to select from a range of predictive models and algorithms to forecast oil prices.
+
+
+## API Reference
+
+#### Get all features
+
+Retrieves a list of all features that can be used for data visualization and filtering.
+
+```http
+  GET /features
 ```
 
-### Dependencies
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| N/A       | `string` |  List of all features      |
 
-Ensure you have the following dependencies installed:
 
-- Flask
-- matplotlib
-- numpy
-- pandas
-- gunicorn
-- pytest
-- joblib
-- scikit-learn
-- statsmodels
-- jupyter notebook
-- A virtual environment manager like conda
 
-### Executing Program
+## Run Locally
 
-1. Activate your virtual environment (e.g., conda or venv).
+#### Prerequisites
+- Git
+- Python 3.x
+- Pip
+- A web browser
 
-2. Start Jupyter Notebook:
+#### Steps
+1. Clone the project
+
 ```bash
-jupyter notebook
+  git clone https://github.com/mariamills/Oil-Price-Prediction-ML.git
 ```
 
-3. Navigate to the desired notebook and run it.
+2. Go to the project directory
 
-## Help
+```bash
+  cd Oil-Price-Prediction-ML
+```
 
-For help and support, please open an issue in the GitHub repository.
+3. Install dependencies
 
-## Detailed Documentation
+```bash
+  pip install -r requirements.txt
+```
 
-For an in-depth understanding of our project, methodologies, and results, please refer to our [detailed documentation](https://mariamills.github.io/Oil-Price-Prediction-Documentation/).
+4. Start the server
 
-## Interactive Web Interface
+```bash
+  python app.py
+```
+or in your IDE, run the app.py file.
 
-Explore our data, models, and results interactively through our [web interface](https://oil-price-prediction.onrender.com/). Ideal for non-tech users to quickly visualize data correlations, model metrics, and predictions.
+5. Access the Web Interface
+Open your web browser and navigate to the following address:
 
-## Excel Overview
+```
+http://127.0.0.1:5000
+```
 
-Here is quick look at how each model performed on each dataset
-[Model_Metrics.xlsx](https://github.com/Hutto04/The-Oval-Table/files/13348973/Model_Metrics.xlsx)
+
+## Tech Stack
+
+**Frontend:** TailwindCSS, HTML, CSS, Javascript
+
+**Backend:** Javascript, Flask(Python)
+
+## Usage/Examples
+
+### Overview
+The Oil Price Prediction Web Interface is designed to be user-friendly and intuitive. This section provides you with some examples and scenarios to help you make the most out of the data exploration functionalities.
+
+### Accessing the Website
+To quickly begin, navigate to the website by clicking on the following link: [Oil Price Prediction Data Explorer](https://oil-price-prediction.onrender.com/data_explorer)
+
+### User Guide
+A quick user guide is available within the website to assist you in navigating the various features and functionalities. Look on the page and please read the _Important Notes_
+
+### Example Scenarios
+#### Exploring Data with Filters
+__Choose Graph Type__: Decide whether you want to see the data as a scatter plot or a line plot using the dropdown selection.
+
+### Future Features
+In the upcoming releases, you will be able to select various predictive models to get future oil price estimates. This feature along with others such as time range selection and more is currently under development and will be announced when available.
 
 
-## Authors
 
-- Maria Mills
+## Demo
 
-- Jae Kim
+You can access a live demo of our Oil Price Prediction Web Interface by clicking [here](https://oil-price-prediction.onrender.com/).
 
-- William (Bruce) Hutto
+#### Hosting Limitations
+⚠️ __Please Note__: The website is currently hosted on [Render's](https://render.com/) free tier. Due to the limitations of this plan, the following should be noted:
 
-- Gurpreet Singh
+- __Initial Load Time__: The app will shut down upon inactivity, so it may take a while to initially load.
 
-## Version History
+- __Resource Constraints__: Performing too many operations, such as selecting a large number of features multiple times for visualization, may result in memory overflow.
 
-__Cycle 1 (v1)__: This was the first version of our project, and we aim to improve and refine our models in subsequent cycles. Initial start with Naive Forecast, Random Forest, XGBoost, and Polynomial Regression models.
+#### Troubleshooting
+If the chart takes longer than 3 minutes to generate, it's likely that the server is struggling with the load. In such cases, refreshing the page and selecting fewer features may resolve the issue.
 
-__Cycle 2 (v2)__: Focused on time series models for forecasting future oil prices. Added ARIMA, Prophet, and Time Series XGBoost to our suite.
+#### Recommended Exploration
+__Feature Selection__: Start by selecting just a few features for your initial exploration to avoid any potential memory issues.
 
-## Known Bugs/Issues
+__User Guide__: View the quick & simple user guide on the webpage for a quick overview of the website functionalities.
 
-- __Overfitting__: Our models tend to overfit on the training data. We're actively researching ways to mitigate this in our next cycle.
+## FAQ
+#### Where did you get the data that is being used here?
+The data was provided by our 'sponsor,' a professor in the Economics department of our school. The data files include __Macroeconomic Data.csv__, which contains macroeconomic indicators from January 1986 to June 2023. We also received __RWTCm.xls__, containing data on the Cushing, OK WTI Spot Price FOB (Dollars per Barrel) from January 1986 to July 2023.
 
-- __Data Limitations__: Some inconsistencies in the data might affect model performance. We're looking into refining our data preprocessing steps.
+#### How up-to-date is the data?
+The data spans from January 1986 to June 2023 for macroeconomic indicators and until July 2023 for oil prices. __Please note that this data is not regularly updated__ as it serves the educational purposes of a school project, designed as an introduction to machine learning.
 
-- As of this writing, our time series models are not yielding the expected performance levels with the current dataset. The underlying reasons for this are not entirely clear to us yet. We are investigating potential causes, including exploring the possibility of errors in our approach.
+#### What is this for?
+This project is part of our Software Engineering class (CPSC 4175), where we were assigned a machine learning project focusing on oil price prediction. We were also assigned a 'sponsor' to simulate a real-world software engineering environment. Our team, "The Oval Table," comprises four members. The main requirement of this project is to use the provided data to train machine learning models capable of predicting oil prices.
 
-## Notes
-- __Cycle 2 Challenges__: Despite our efforts, we faced overfitting issues and found that ARIMA might not be the best fit for our data. The steep learning curve and limited time frame posed significant challenges in improving our time series models.
+#### Why build a whole web interface?
+Initially, we built the web interface for data exploration to visually analyze the correlation between the various features and the 'real oil price'—which we calculate by adjusting the nominal price using the CPI. __Our ambition extends beyond just completing the class project; we aimed to provide an easy-to-use interface for our 'sponsor,' who is not a computer science major__. Rather than just delivering raw code or notebooks, we wanted to offer an intuitive, user-friendly experience.
+## Feedback
 
-## License
+If you have any feedback, please reach out to us at maria@mariamills.org
 
-This project is licensed under the APGL-3.0 License
 
-## Acknowledgments
+## Contributing
 
-Special thanks to all contributors and supporters of this project.
+Contributions are always welcome!
+
+Just fork the repo and submit a pull request. Please be as descriptive as possible in your pull request.
+
+If you encounter any issues or have questions, please report them using the "Issues" section of the GitHub repository. Your input is valuable to us!
